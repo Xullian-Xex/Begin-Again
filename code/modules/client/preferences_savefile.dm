@@ -645,7 +645,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	// !! COYOTE SAVE FILE STUFF !!
-	S["profilePicture"] >> profilePicture // Profile picklies
+	S["headshot"] >> headshot // Profile picklies
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
@@ -801,7 +801,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	scars_list["5"] = sanitize_text(scars_list["5"])
 
 	// !! COYOTE SANITISATION !!
-	profilePicture = sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+	headshot = sanitize_text(headshot) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -985,7 +985,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	// !! COYOTE SAVEFILE STUFF !!
-	WRITE_FILE(S["profilePicture"],	profilePicture)
+	WRITE_FILE(S["headshot"],	headshot)
 
 	cit_character_pref_save(S)
 

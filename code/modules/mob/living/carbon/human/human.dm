@@ -321,7 +321,7 @@
 
 	// Gremling is just gonna do gremlin things and add this here > w> Cant be assed trying to fit this in somewhere else for now.
 	if(href_list["enlargeImage"])
-		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
+		var/dat = {"<img src='[headshot]'>"}
 		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",500,500)
 		popup.set_content(dat)
 		popup.open()

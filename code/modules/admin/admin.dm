@@ -92,7 +92,7 @@
 	body += "<a href='byond://?src=[ref];individuallog=[ref_mob];log_src=[source]'>LOGS</a>\] <br>"
 
 	body += "<b>Mob type</b> = [M.type]<br>"
-	body += "<a href='byond://?src=[ref];removeProfilePic=[ref_mob]'>Remove Profile Picture</a><br><br>" // Coyote change here! Added removing pfp to the player panel <3
+	body += "<a href='byond://?src=[ref];removeHeadshot=[ref_mob]'>Remove Profile Picture</a><br><br>" // Coyote change here! Added removing pfp to the player panel <3
 
 	body += "<a href='byond://?src=[ref];boot2=[ref_mob]'>Kick</A> | "
 	body += "<a href='byond://?src=[ref];newban=[ref_mob]'>Ban</A> | "

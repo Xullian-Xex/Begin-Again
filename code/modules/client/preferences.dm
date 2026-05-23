@@ -317,7 +317,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</td>"
 
 			dat += "<b>Profile Picture:</b><BR>"
-			dat += "<b>Picture:</b> <a href='byond://?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<b>Picture:</b> <a href='byond://?_src_=prefs;preference=Headshot;task=input'>[headshot ? "<img src=[headshot] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
 
 /*

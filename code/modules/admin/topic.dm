@@ -535,13 +535,13 @@
 				M.change_mob_type( /mob/living/simple_animal/shade , null, null, delmob )
 
 	/////////////////////////////////////removes player profile pic
-	else if(href_list["removeProfilePic"])
+	else if(href_list["removeHeadshot"])
 		if(!check_rights(R_ADMIN))
 			return
 
-		if(alert(usr, "Are you sure you want to remove their profile picture?", "Confirmation", "Yes", "No") == "Yes")
-			var/mob/living/carbon/human/H = locate(href_list["removeProfilePic"])
-			H.RemoveProfilePic()
+		if(alert(usr, "Are you sure you want to remove their headshot?", "Confirmation", "Yes", "No") == "Yes")
+			var/mob/living/carbon/human/H = locate(href_list["removeHeadshot"])
+			H.remove_headshot()
 
 	/////////////////////////////////////new ban stuff
 	else if(href_list["unbanf"])
