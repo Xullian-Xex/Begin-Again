@@ -84,6 +84,8 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/panicbunker,
 	/datum/admins/proc/BC_WhitelistKeyVerb,
 	/datum/admins/proc/BC_RemoveKeyVerb,
+	/datum/admins/proc/BC_ShowWhitelistVerb,
+	/datum/admins/proc/BC_ReloadWhitelistVerb,
 	/datum/admins/proc/BC_ToggleState,
 	/client/proc/stop_sounds,
 	/client/proc/mark_datum_mapview,
