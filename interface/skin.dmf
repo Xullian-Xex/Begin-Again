@@ -11,8 +11,8 @@ window "mainwindow"
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-maximized = true
 		statusbar = false
-		title = "New Babylon"
-		icon = 'icons\\deathclawlogo.png'
+		title = "Begin Again"
+		icon = 'icons\\begin-again.png'
 		macro = "default"
 		menu = "menu"
 		background-color = #202020

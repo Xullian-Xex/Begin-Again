@@ -135,7 +135,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/list/ignoring = list()
 
-	var/clientfps = 0
+	var/clientfps = 100
 
 	var/parallax
 
@@ -176,7 +176,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/gear_category
 	var/gear_subcategory
 
-	var/screenshake = 100
+	var/screenshake = 30
 	var/damagescreenshake = 2
 	var/arousable = TRUE
 	var/end_of_round_deathmatch = FALSE
