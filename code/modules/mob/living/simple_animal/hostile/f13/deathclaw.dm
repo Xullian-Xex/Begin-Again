@@ -32,9 +32,6 @@
 	emote_taunt = list("stares ferociously", "stomps")
 	speak_chance = 10
 	taunt_chance = 25
-
-	stat_attack = UNCONSCIOUS
-
 	see_in_dark = 8
 	decompose = FALSE
 	wound_bonus = 0 //This might be a TERRIBLE idea
@@ -77,41 +74,12 @@
 	gender = FEMALE
 	maxHealth = 800
 	health = 800
-	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 50
 	melee_damage_upper = 55
 	armour_penetration = 0.4
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
-
-/mob/living/simple_animal/hostile/deathclaw/mother/AttackingTarget()
-	var/mob/living/M = target
-	if(!ishuman(M) || M.health > 20)
-		..()
-		return
-
-	if(get_dist(src, M) > 0)
-		a_intent = INTENT_GRAB
-		grab_state = GRAB_NECK
-		summon_backup(15)
-
-		start_pulling(M, 1)
-		M.grabbedby(src)
-		M.drop_all_held_items()
-		M.stop_pulling()
-
-		var/obj/item/bodypart/chest/O = M.get_bodypart(BODY_ZONE_CHEST)
-		O.force_wound_upwards(/datum/wound/pierce/critical)
-
-		visible_message("<span class='danger'>[src] growls, lifting [M] into the air and violently executing them!</span>")
-		to_chat(M, "<span class='userdanger'>[src] lifts you into the air, violently putting an end to your life!</span>")
-
-		M.adjustBruteLoss(100)//Not tanking this without abuse of a specific mechanic. Bypasses armor.
-
-	if(!ishuman(M) || M.health <= 0)
-		src.drop_all_held_items()
-		src.stop_pulling()
 
 //Legendary Deathclaw
 /mob/living/simple_animal/hostile/deathclaw/legendary
@@ -120,7 +88,6 @@
 	maxHealth = 1500
 	health = 1500
 	color = "#FFFF00"
-	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 55
 	melee_damage_upper = 55
 	armour_penetration = 0.4
@@ -132,34 +99,6 @@
 	if(prob(37))
 		guaranteed_butcher_results = list(/obj/item/melee/unarmed/deathclawgauntlet = 1)
 
-/mob/living/simple_animal/hostile/deathclaw/legendary/AttackingTarget()
-	var/mob/living/M = target
-	if(!ishuman(M) || M.health > 20)
-		..()
-		return
-
-	if(get_dist(src, M) > 0)
-		a_intent = INTENT_GRAB
-		grab_state = GRAB_NECK
-		summon_backup(15)
-
-		start_pulling(M, 1)
-		M.grabbedby(src)
-		M.drop_all_held_items()
-		M.stop_pulling()
-
-		var/obj/item/bodypart/chest/O = M.get_bodypart(BODY_ZONE_CHEST)
-		O.force_wound_upwards(/datum/wound/pierce/critical)
-
-		visible_message("<span class='danger'>[src] growls, lifting [M] into the air and violently executing them!</span>")
-		to_chat(M, "<span class='userdanger'>[src] lifts you into the air, violently putting an end to your life!</span>")
-
-		M.adjustBruteLoss(100)//Not tanking this without abuse of a specific mechanic. Bypasses armor.
-
-	if(!ishuman(M) || M.health <= 0)
-		src.drop_all_held_items()
-		src.stop_pulling()
-
 //Power Armor Deathclaw the tankest and the scariest deathclaw in the West. One mistake will end you. May the choice be with you.
 /mob/living/simple_animal/hostile/deathclaw/power_armor
 	name = "power armored deathclaw"
@@ -169,40 +108,11 @@
 	icon_dead = "combatclaw_dead"
 	maxHealth = 2500
 	health = 2500
-	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 70
 	melee_damage_upper = 80
 	armour_penetration = 0.5
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
-
-/mob/living/simple_animal/hostile/deathclaw/power_armor/AttackingTarget()
-	var/mob/living/M = target
-	if(!ishuman(M) || M.health > 20)
-		..()
-		return
-
-	if(get_dist(src, M) > 0)
-		a_intent = INTENT_GRAB
-		grab_state = GRAB_NECK
-		summon_backup(15)
-
-		start_pulling(M, 1)
-		M.grabbedby(src)
-		M.drop_all_held_items()
-		M.stop_pulling()
-
-		var/obj/item/bodypart/chest/O = M.get_bodypart(BODY_ZONE_CHEST)
-		O.force_wound_upwards(/datum/wound/pierce/critical)
-
-		visible_message("<span class='danger'>[src] growls, lifting [M] into the air and violently executing them!</span>")
-		to_chat(M, "<span class='userdanger'>[src] lifts you into the air, violently putting an end to your life!</span>")
-
-		M.adjustBruteLoss(100)//Not tanking this without abuse of a specific mechanic. Bypasses armor.
-
-	if(!ishuman(M) || M.health <= 0)
-		src.drop_all_held_items()
-		src.stop_pulling()
 /*
 /mob/living/simple_animal/hostile/deathclaw/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
