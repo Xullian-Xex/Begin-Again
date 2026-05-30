@@ -357,7 +357,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/f13/ncr/reinforced/mantle/sergeant
 	suit_store = /obj/item/gun/ballistic/automatic/assault_rifle/ak112
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556mm = 2,
+		/obj/item/ammo_box/magazine/m5mm = 2,
 		/obj/item/storage/box/ration/menu_two = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/flashlight/seclite = 1,
